@@ -10,6 +10,8 @@ const headerImg = document.querySelector(".header__background--image");
 const logo = document.querySelector(".logo a");
 // .header__selectBox
 const headerSelectBox = document.querySelector(".header__selectBox");
+// .gnb__list
+const gnbList = document.querySelector(".gnb__list");
 // .gnb__item all
 const gnbItems = document.querySelectorAll(".gnb__item a");
 // .gnb__item--selected
@@ -53,10 +55,18 @@ logo.addEventListener("mouseover", () => {
   headMouseOverEvent(logo);
 })
 
+logo.addEventListener("mouseout", () => {
+  headMouseOverEvent(gnbItemSelected ?? logo);
+})
+
 gnbItems.forEach(item => {
   item.addEventListener("mouseover", () => {
     headMouseOverEvent(item);
   })
+})
+
+gnbList.addEventListener("mouseleave", () => {
+  headMouseOverEvent(gnbItemSelected ?? logo);
 })
 
 function headMouseOverEvent(el) {
@@ -74,5 +84,4 @@ function moveSelectBox(width, height, x, y) {
   headerSelectBox.style.left = x - offX + "px";
   headerSelectBox.style.width = width + "px";
   headerSelectBox.style.height = height + "px";
-  // headerSelectBox.style.transform = `translate(${x}px, ${y}px)`;
 }

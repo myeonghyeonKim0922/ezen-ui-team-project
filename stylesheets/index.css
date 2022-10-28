@@ -56,9 +56,10 @@ a {
 }
 
 .logo__link {
-  color: white;
+  padding: 8px 16px;
   font-size: 2rem;
   font-weight: bold;
+  color: white;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 /* gnb */
@@ -76,7 +77,8 @@ a {
 }
 
 .gnb__item > a {
-  margin: 0 32px;
+  margin: 0 16px;
+  padding: 8px 16px;
 
   font-size: 1.2rem;
   user-select: none;
@@ -86,8 +88,8 @@ a {
 }
 /* header selectBox */
 .header__selectBox {
-  width: 100px;
-  height: 80px;
+  width: 0px;
+  height: 0px;
 
   position: absolute;
   z-index: -1;
