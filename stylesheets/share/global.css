@@ -1,0 +1,173 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+
+:root {
+  --content-width: 1200px;
+  --main-color: #6868AC;
+  --darken-main-color: #5E5E9B;
+  --lighten-main-color: #7777B4;
+  --black-color: #333333;
+  --gray-color: #959595;
+  --white-color1: #E8E9EB;
+  --white-color2: #E1E2E5;
+  --red-color: #EA445E;
+}
+
+body {
+  background-color: var(--white-color1);
+}
+
+body * {
+  font-family: 'Nanum Gothic Coding', monospace !important;
+}
+
+.wrap {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+/* header */
+.header {
+  width: 100vw;
+  height: 80px;
+  max-width: 100%;;
+
+  padding: 0 80px;
+  box-sizing: border-box;
+
+  position: fixed;
+  top: 0;
+  z-index: 0;
+
+  overflow: hidden;
+
+  background: var(--main-color);
+
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.header__logo {
+  float: left;
+}
+
+.logo__text {
+  user-select: none;
+}
+
+.logo__link {
+  padding: 8px 16px;
+
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 80px;
+
+  color: var(--white-color1);
+  text-decoration: none;
+}
+
+/* gnb */
+.header__gnb {
+  float: right;
+}
+
+.gnb__list {
+  display: flex;
+  flex-direction: row;
+
+  padding: 0 16px;
+
+  line-height: 80px;
+}
+
+.gnb__item:hover {
+  background: var(--lighten-main-color);
+}
+
+.gnb__item--selected {
+  background: var(--darken-main-color);
+}
+
+.gnb__item > a {
+  margin: 0 16px;
+  padding: 8px 16px;
+
+  font-size: 20px;
+  user-select: none;
+
+  color: var(--white-color1);
+  text-decoration: none;
+}
+
+/* main */
+.main {
+  width: 100vw;
+  max-width: 100%;;
+  margin-top: 80px;
+  background: var(--white-color1);
+}
+
+.main__wrap {
+  height: 100%;
+}
+
+/* footer */
+.footer {
+  width: 100vw;
+  max-width: 100%;
+  background: var(--black-color);
+}
+
+.footer__info:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 40px 0;
+}
+
+.footer__api span {
+  display: block;
+  margin: 8px 0;
+  color: var(--white-color1);
+}
+
+.footer__api span:first-child {
+  font-weight: bold;
+}
+
+.footer__api span a {
+  color: var(--white-color1);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.footer__divider {
+  height: 1px;
+  margin: 0 80px;
+  background: var(--white-color1);
+}
+
+.footer__info:last-child {
+  overflow: hidden;
+  padding: 20px 0;
+  margin: 0 80px;
+}
+
+.footer__logo {
+  float: left;
+  color: var(--white-color1);
+  font-size: 20px;
+}
+
+.footer__members {
+  float: right;
+}
+
+.members__list {
+  display: flex;
+}
+
+.members__item {
+  color: var(--white-color1);
+  margin: 0 16px;
+  font-size: 14px;
+}
