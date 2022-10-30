@@ -101,7 +101,7 @@ body *:not(i) {
   padding: 0 24px;
   box-sizing: border-box;
 
-  font-size: 20px;
+  font-size: 16px;
   user-select: none;
 
   color: var(--white-color1);
@@ -224,7 +224,6 @@ body *:not(i) {
 
   .gnb__item > a {
     padding: 0 16px;
-    font-size: 16px;
   }
 
   .main {
