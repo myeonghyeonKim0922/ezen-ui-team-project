@@ -1,3 +1,76 @@
 @charset "UTF-8";
 @import url(../share/global.css);
 @import url(../share/reset.css);
+.main{
+    width: 1200px;
+}
+
+.main__title{
+    margin: 0
+}
+
+.main__title h1 {
+    font-size: 2rem;
+    padding-top: 70px;
+    padding-left: 40px;
+}
+
+.main__header {
+    padding-top: 25px;
+    border-bottom: 2px solid #959595;
+    padding-bottom: 63px;
+    width: 100%;    
+}
+
+.main__poster {
+    background-color: antiquewhite;
+    margin: 0 auto;
+    width: 289px;
+    height: 428px;
+}
+
+.movie__date {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.movie__date #left ,#right {
+    color: #6868AC;
+}
+
+.movie__date li {
+    padding: 10px;
+    float: left;
+}
+
+.movie__card {
+    position: relative;
+    width: 240px;
+    height: 416px;
+    background-color: #6868AC;
+    background-clip: content-box;
+    padding: 54px;
+}
+
+.movie__card ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie__poster {
+    background-clip: content-box;
+    width: 192px;
+    height: 284px;
+    background-color: red;
+    padding-left: 24px;
+}
+
+.movie__info {
+    background-clip: content-box;
+    width: 192px;
+    height: 132px;
+    background-color: #E1E2E5;
+    padding-left: 24px;
+}
