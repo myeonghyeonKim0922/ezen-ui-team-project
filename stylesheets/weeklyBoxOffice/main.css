@@ -54,10 +54,6 @@
     padding: 54px;
 }
 
-.movie__card ul {
-    display: flex;
-    flex-direction: column;
-}
 
 .movie__poster {
     background-clip: content-box;
