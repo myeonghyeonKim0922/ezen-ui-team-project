@@ -1,0 +1,140 @@
+body{
+    background: #e8e9eb;
+}
+/*first movie div*/
+.content{
+    width : 1100px;
+    margin: 0 auto;
+}
+
+.daily__boxoffice{
+    padding: 40px;
+}
+
+.daily__boxoffice h1{
+    font-size: 1.5rem;
+}
+
+.first__movie{
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.first__poster{
+    padding: 30px;
+    
+}
+
+.first__poster img{
+    width: 220px;
+    height: 326px;
+}
+
+.first__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-content: space-around;
+    width: 50vw;
+    margin-bottom: 60px;
+    padding: 100px 0 20px 30px;
+}
+
+.first__info .rank{
+    font-size: 3rem;
+    font-family: border;
+}
+
+.first__info .movie__name{
+    font-size: 2rem;
+    font-family: border;
+}
+
+.first__poster .button__movie__info{
+    width: 220px;
+    height: 56px;
+    margin-top: 10px;
+    background: #6868AC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color : #fff;
+}
+
+.theater__link{
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.movie__link{
+    width: 142px;
+    height: 192px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;  
+}
+
+.movie__link img{
+    width: 78px;
+    height: 58px;   
+    padding-bottom: 50px;
+}
+
+.movie__link p{
+    padding-bottom: 20px;
+}
+
+#megabox{
+    background: rgb(61,42,119);
+    color: #fff;
+}
+
+#cgv{
+    background: #fff;
+    color: #ff0d01
+}
+
+/*movie list div*/
+.movie__list{
+    display: flex;
+}
+
+
+.movie__content{
+    width: 256px;
+    height: 400px; 
+    margin: 28px;
+    border-radius: 15px;
+    background-color: #e1e2e5;
+    box-shadow: 5px 5px 10px ;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie__content .content__poster img{
+    width: 200px;
+    height: 256px;
+    margin: 28px 28px 0 28px;
+}
+
+.content__title{
+    margin: 20px 0 20px 28px;
+    
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content__info{
+    background: #6868ac;
+    color: #fff;
+    padding-left: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.7rem;
+}
