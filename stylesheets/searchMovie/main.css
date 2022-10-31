@@ -1,3 +1,129 @@
 @charset "UTF-8";
 @import url(../share/global.css);
 @import url(../share/reset.css);
+
+.wrap__top {
+    width: 100%;
+    height: 500px;
+    /* background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), */
+    /* url(../../img/searchMovie_img/theater_chair.jpg); */
+    /* background-size: 400px; */
+}
+
+h1 {
+    font-size: 20px;
+}
+
+
+.wrap__search_box {
+    
+    height: 40px;
+    width: 400px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    background: #fff;
+
+}
+
+.wrap__search_box input {
+    text-align: center;
+    font-size: 16px;
+    width: 325px;
+    padding: 10px;
+    border: 0px;
+    outline: none;
+    float: left;
+    
+}
+
+.wrap__search_box button {
+    
+    width: 50px;
+    height: 100%;
+    border: 0px;
+    outline: none;
+    float: right;
+    color: #fff;
+    border-radius: 50px;
+    
+    
+}
+
+.wrap__movie_main {
+    width: 100%;
+    height: 1500px;
+    background-color: blanchedalmond;
+}
+
+.wrap__movie_main__movielist {
+
+    width: 100%px;
+    height: 1400px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #E8E9EB;
+    flex-wrap: wrap;
+    
+}
+
+.wrap__movie_main__movielist > div {
+
+    margin-top: 100px;
+    background-color: aqua;
+    width: 512px;
+    height: 320px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+/* 영화 리스트 내용 */
+
+/* 포스터 */
+
+.wrap__movie_main__movielist > div > .poster {
+    background-color: #6868AC;
+    width: 216px;
+    height: 320px;
+    float: left;
+}
+
+/* 별점 */
+
+.wrap__movie_main__movielist > div > .starscore {
+    background-color: #9eafff;
+    width: 296px;
+    height: 40px;
+    float: right;
+    text-align: right;
+    line-height: 40px;
+}
+
+.wrap__movie_main__movielist > div > .starscore h1 {
+    margin-right: 10px;
+}
+
+/* 제목 및 개봉상태 */
+
+.wrap__movie_main__movielist > div > .movie_title {
+    background-color: #e89eff;
+    width: 296px;
+    height: 60px;
+    float: right;
+}
+
+.wrap__movie_main__movielist > div > .movie_title h1 {
+    padding: 10px;
+}
+
+.wrap__movie_main__movielist > div > .movie_title button {
+    margin-left: 10px;
+}
+
+/* 영화 리스트 내용 끝 */
+
+.wrap__movie_main__movielist div .underbar {
+    width: 296px;
+    height: 16px;
+    background-color: #6868AC;
+    float: right;
+}
