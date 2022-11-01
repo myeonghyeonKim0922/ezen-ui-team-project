@@ -15,13 +15,16 @@
     /* background-size: 400px; */
 }
 
-h1 {
-    font-size: 20px;
+.wrap > h1 {
+    font-size: 24px;
+    position: relative;
+    top: 30px;
+    left: 30px;
 }
 
 
 .wrap__search_box {
-    
+
     text-align: center;
     height: 40px;
     width: 400px;
@@ -29,6 +32,7 @@ h1 {
     border-radius: 50px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     background: #fff;
+    box-sizing: border-box;
 
 }
 
@@ -39,7 +43,10 @@ h1 {
     width: 325px;
     padding: 10px;
     border: 0px;
+    border-radius: 50px;
     outline: none;
+    height: 100%;
+    box-sizing: border-box;
     
 }
 
@@ -58,18 +65,18 @@ h1 {
 
 .wrap__movie_main {
     width: 100%;
-    height: 1500px;
-    background-color: blanchedalmond;
+    background-color: #E8E9EB;
 }
 
 .wrap__movie_main__movielist {
 
-    width: 100%px;
-    height: 1400px;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     background-color: #E8E9EB;
     flex-wrap: wrap;
+    margin-bottom: 100px;
+
     
 }
 
@@ -80,6 +87,7 @@ h1 {
     width: 512px;
     height: 320px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
 
 }
 
@@ -87,8 +95,8 @@ h1 {
 
 /* 포스터 */
 
-.wrap__movie_main__movielist > div > .poster {
-    background-color: #6868AC;
+.wrap__movie_main__movielist > div > a > .poster {
+    background-color: var(--main-color);
     width: 216px;
     height: 320px;
     float: left;
@@ -96,8 +104,9 @@ h1 {
 
 /* 별점 */
 
-.wrap__movie_main__movielist > div > .starscore {
-    background-color: #9eafff;
+.wrap__movie_main__movielist > div > a > .starscore {
+    color: var(--main-color);
+    background-color: var(--white-color2);
     width: 296px;
     height: 40px;
     float: right;
@@ -105,32 +114,63 @@ h1 {
     line-height: 40px;
 }
 
-.wrap__movie_main__movielist > div > .starscore h1 {
+.wrap__movie_main__movielist > div > a > .starscore h1 {
+    font-size: 24px;
     margin-right: 10px;
 }
 
 /* 제목 및 개봉상태 */
 
-.wrap__movie_main__movielist > div > .movie_title {
-    background-color: #e89eff;
+.wrap__movie_main__movielist > div > a > .movie_title {
+    color: var(--black-color);
+    font-size: 24px;
+    background-color: var(--white-color2);
     width: 296px;
     height: 60px;
     float: right;
 }
 
-.wrap__movie_main__movielist > div > .movie_title h1 {
+.wrap__movie_main__movielist > div > a > .movie_title h1 {
     padding: 10px;
 }
 
-.wrap__movie_main__movielist > div > .movie_title button {
+.wrap__movie_main__movielist > div > a > .movie_title .release {
+    width: 40px;
+    border-radius: 3px;
+    padding: 2px;
+    font-size: 10px;
     margin-left: 10px;
+    color: var(--white-color1);
+    background-color: var(--gray-color);
+}
+
+/* 리스트 언더바 디자인 */
+
+.wrap__movie_main__movielist div .underbar {
+
+    width: 296px;
+    height: 16px;
+    background-color: var(--main-color);
+
+    position: absolute;
+    bottom: calc(320px - 100%);
+    right: calc(512px - 100%);
 }
 
 /* 영화 리스트 내용 끝 */
 
-.wrap__movie_main__movielist div .underbar {
-    width: 296px;
-    height: 16px;
-    background-color: #6868AC;
-    float: right;
+/* 페이지 버튼 */
+
+.page_bt {
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+.page_bt a {
+    text-decoration: none;
+    color: black;
+}
+
+.page_bt a:hover {
+    text-decoration: underline;
 }
