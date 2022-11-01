@@ -43,48 +43,81 @@
   <!-- main -->
   <main class="main">
     <div class="main__wrap wrap">
-      <!-------------------------------------------------------------------->
+      <!---------------------------------------------------------------------------------------------------------------------------------------->
       <div class="content">
         <div class="daily__boxoffice">
             <h1>일간 박스오피스</h1>
         </div>
         <div class="first__movie">
             <div class="first__poster">
-                <img src="https://movie-phinf.pstatic.net/20221026_38/1666767919435O8afR_JPEG/movie_image.jpg" alt="1st_movie">
+              <a href="#">
+                <img src="" alt="1st_movie">    <!--------------->
                 <div class="button__movie__info">영화 상세 정보</div>
+              </a>
             </div>
             <div class="first__info">
                 <div class="rank">1</div>
                 <div class="movie__name">리멤버</div>
-                <div class="movid__salesAcc">누적 매출액</div>
-                <div class="movie__audiAcc">누적 관객수</div>
+                <div class="movie__salesAcc">
+                  <p>누적 매출액</p>
+                  <div class="salesAcc__value">
+                    595,012,395원
+                  </div>
+                </div>
+                <div class="movie__audiAcc">
+                  <p>누적 관객수</p>
+                  <div class="audiAcc__value">
+                    69,713명
+                  </div>
+                </div>
             </div>
             <div class="theater__link">
+              <a href="#">
                 <div class="movie__link" id="megabox">        
-                  <img src="../img/megabox_logo.png"∂ alt="megabox 링크">
+                  <img src="../img/megabox_logo.png" alt="megabox 링크">
                   <p>바로가기</p>
                 </div>
+              </a>
+              <a href="#">
                 <div class="movie__link" id="cgv">
                   <img src="../img/cgv_logo.png" alt="cgv 링크">
                   <p>바로가기</p>
                 </div>
+              </a>
             </div>
         </div>
         <br>
         <hr>
+    <!---------- movie list section ------------------------------------------------------------------------------------------------------------------------------>
         <div class="movie__list">
-            <div class="movie__content">
-              <div class="content__poster"><img src="https://movie-phinf.pstatic.net/20221026_38/1666767919435O8afR_JPEG/movie_image.jpg" alt="poster"></div>
-              <div class="content__title">리멤버</div>
-              <div class="content__info">
-                <p>개봉일</p>
-                <p>누적 관객수</p>
+          <div class="movie__content">
+            <a href="#">
+              <div class="movie__content__top">
+                <img src="" alt="poster">
+                <div class="content__title">리멤버</div>
               </div>
-            </div>
+              <div class="movie__content__bottom">
+                <div class="content__info">
+                  <div class="openDt">
+                    <p>개봉일</p>
+                    <div class="openDt__value">
+                      22/10/26
+                    </div>
+                  </div>
+                  <div class="audiAcc">
+                    <p>누적 관객수</p>
+                    <div class="audiAcc__value">
+                      69,713명
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
     </div>
-    <!-------------------------------------------------------------------->
-  </div>
+  </div> 
+  <!---------------------------------------------------------------------------------------------------------------------------------------->
   </main>
   <!-- footer -->
   <footer class="footer">
