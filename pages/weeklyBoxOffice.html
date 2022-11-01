@@ -7,6 +7,10 @@
   <meta name="theme-color" content="#6868AC" />
   <link rel="stylesheet" href="../lib/fontawesome-free-6.2.0-web/css/all.min.css">
   <link rel="stylesheet" href="../stylesheets/weeklyBoxOffice/main.css">
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
   <title>주간 박스오피스</title>
 </head>
 <body>
@@ -46,6 +50,20 @@
         <h1>주간 박스오피스</h1>
         <div class="main__header">
         <div class="main__poster">
+          <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+        <div class="swiper-slide">Slide 10</div>
+      </div>
+    </div>
       </div>
       </div>
     </div>
@@ -63,11 +81,25 @@
         </li>
       </ul>
     </div>
-
-      <div class="movie__card">
-          <div class="movie__poster"></div>
-          <div class="movie__info"></div>
-      </div>
+      <ul class="card__list">
+        <!-- <li>
+            <div class="movie__card">
+              <a href="" class="nav__movieinfo">
+              <div class="movie__poster"></div>
+              <div class="movie__info">
+                <ul class="info__list">
+                  <li class="list__1">영화 제목</li>
+                  <li class="list__2">개봉일</li>
+                  <li class="list__3">0원</li>
+                  <li class="list__4"></li>
+                  <li class="list__5">0명</li>
+                  <li class="list__6"></li>
+                </ul>
+              </div>
+              </a>  
+            </div>
+        </li>   -->
+      </ul>
     </div> 
   </main>
   <!-- footer -->
@@ -102,5 +134,12 @@
   </footer>
   <script src="../scripts/share/global.js"></script>
   <script src="../scripts/weeklyBoxOffice/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "cards",
+        grabCursor: true,
+      });
+    </script>
 </body>
 </html>
