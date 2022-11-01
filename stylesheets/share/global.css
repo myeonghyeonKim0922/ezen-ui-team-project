@@ -30,7 +30,7 @@ body *:not(i) {
 /* header */
 .header {
   width: 100vw;
-  max-width: 100%;;
+  max-width: 100%;
 }
 
 .header__main {
