@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 800px;
+  padding: 80px 0;
+  background: beige;
+}
+/* search */
+.search {
+  width: 300px;
+  padding: 40px 0;
+  margin: 0 auto;
+}
+
+.search__form {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+}
+
+.search__input {
+  flex-grow: 1;
+}
+
+.search__btn {
+  width: 60px;
+  height: 40px;
+}
+
+/* main-result */
+.main-result {
+  height: 300px;
+  border: 1px solid black;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-result__poster {
+  width: 120px;
+  height: calc(120px * 1.414);
+  background: gray;
+  display: flex;
+}
+
+.main-result__poster--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-result__info {
+  width: 50%;
+  padding: 40px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.info__item {
+  padding: 2px 0;
+}
+
+.info__item--rank {
+  padding: 16px 0;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.main-result__link {
+  height: 60%;
+  width: 80px;
+  background: black;
+}
+
+.link__theater {
+  height: 50%;
+  background: black;
+}
+
+.link__theater a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  width: 160px;
+  aspect-ratio: 9/16;
+  background: white;
+}
+
+.card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+
+  text-decoration: none;
+  color: black;
+
+  cursor: pointer;
+}
+
+.card__rank {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+
+  color: white;
+  background: coral;
+
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+}
+
+.card__poster {
+  flex-grow: 1;
+}
+
+.card__poster--img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: gray;
+}
+
+.card__info {
+  padding: 20px 8px;
+}
