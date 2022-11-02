@@ -1,3 +1,10 @@
+const apiUrl = {
+    daily: "http://13.125.36.145:8080/boxoffice/daily",
+    weekly: "http://13.125.36.145:8080/boxoffice/weekly",
+    list: "http://13.125.36.145:8080/movie/list",
+    info: "http://13.125.36.145:8080/movie/info"
+  }
+  
 function createCard(url, poster, score, title, release, date, genre, nation, director) {
   const movieboxlist = document.querySelector(".wrap__movie_main__movielist");
   // 문서에서 .wrap__movie_main__movielist 클래스를 가진 요소를
