@@ -1,3 +1,243 @@
 @charset "UTF-8";
 @import url(../share/global.css);
 @import url(../share/reset.css);
+
+.wrap__top {
+    width: 100%;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+    /* background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), */
+    /* url(../../img/searchMovie_img/theater_chair.jpg); */
+    /* background-size: 400px; */
+}
+
+.wrap > h1 {
+    font-size: 24px;
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+
+
+.wrap__search_box {
+
+    text-align: center;
+    height: 40px;
+    width: 400px;
+    
+    border-radius: 50px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    box-sizing: border-box;
+
+}
+
+i {
+    font-size: 15px;
+}
+
+.wrap__search_box input {
+
+    text-align: center;
+    font-size: 16px;
+    width: 325px;
+    padding: 10px;
+    border: 0px;
+    border-radius: 50px;
+    outline: none;
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+.wrap__search_box button {
+
+    width: 50px;
+    height: 100%;
+    border: 0px;
+    outline: none;
+    float: right;
+    color: var(--main-color);
+    border-radius: 50px;
+
+}
+
+/* 검색기록 */
+
+.history {
+    width: 400px;
+}
+
+.history a, span {
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--gray-color);
+}
+
+.history a:hover {
+    text-decoration: underline;
+}
+
+/* 메인페이지 */
+
+.wrap__movie_main {
+    width: 100%;
+    background-color: var(--white-color1);
+}
+
+.wrap__movie_main__movielist {
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--white-color1);
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+
+    
+}
+
+.wrap__movie_main__movielist > div {
+
+    margin-top: 100px;
+    background-color: aqua;
+    width: 512px;
+    height: 320px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+
+}
+
+/* 영화 리스트 내용 ======================================================= */
+
+/* 포스터 */
+
+.wrap__movie_main__movielist > div > a > .poster {
+    background-color: var(--main-color);
+
+    width: 216px;
+    height: 320px;
+    float: left;
+
+}
+
+/* 별점 */
+
+.wrap__movie_main__movielist > div > a > .starscore {
+    color: var(--main-color);
+    background-color: var(--white-color2);
+    width: 296px;
+    height: 40px;
+    float: right;
+    text-align: right;
+    line-height: 40px;
+}
+
+.wrap__movie_main__movielist > div > a > .starscore h1 {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* 제목 및 개봉상태 */
+
+.wrap__movie_main__movielist > div > a > .movie_title {
+    color: var(--black-color);
+    font-size: 24px;
+    background-color: var(--white-color2);
+    width: 296px;
+    height: 60px;
+    float: right;
+}
+
+.wrap__movie_main__movielist > div > a > .movie_title h1 {
+    margin: 10px 0px 3px 30px;
+}
+
+.wrap__movie_main__movielist > div > a > .movie_title .release {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 2px;
+    font-size: 10px;
+    margin-left: 30px;
+    color: var(--white-color1);
+    background-color: var(--gray-color);
+}
+
+/* info (개봉일, 장르, 국가, 감독) */
+
+.movieboxes__info > div {
+    color: var(--white-color1);
+    text-decoration: none;
+    height: 30px;
+    background-color: var(--white-color2);
+    /* background-color: red; */
+    float: left;
+    width: 148px;
+    height: 102px;
+    font-display: none;
+}
+
+.movieboxes__info span:not(.info) {
+    display: inline-block;
+    background-color: var(--main-color);
+    padding: 3px;
+    border-radius: 5px;
+    color: var(--white-color1);
+}
+
+.movieboxes__info span {
+    font-size: 13px;
+    display: block;
+    color: var(--black-color);
+    margin: 10px 0px 0px 30px;
+}
+
+.movieboxes__info .release-title {
+    margin-top: 45px;
+}
+
+.movieboxes__info .genre-title {
+    margin-top: 45px;
+}
+
+/* 리스트 언더바 디자인 */
+
+.wrap__movie_main__movielist div .underbar {
+
+    width: 296px;
+    height: 16px;
+    background-color: var(--main-color);
+
+    position: absolute;
+    bottom: calc(320px - 100%);
+    right: calc(512px - 100%);
+}
+
+/* 영화 리스트 내용 끝 ======================================================= */
+
+/* 페이지 버튼 */
+
+.page_bt {
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+.page_bt a {
+    text-decoration: none;
+    color: var(--gray-color);
+}
+
+.page_bt a:hover {
+    text-decoration: underline;
+}
+
+.page_bt a.on {
+    color: var(--main-color);
+    font-weight: bold;
+}
