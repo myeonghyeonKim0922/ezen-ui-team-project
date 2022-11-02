@@ -3,9 +3,6 @@
 var url = "http://localhost:8080/boxoffice/daily";
 url += "?targetDt=20221030";
 
-// var dt = new Date();
-// console.log(dt);
-
 fetch(url)
   .then((data) => data.json())
   .then((data) => {
@@ -15,7 +12,29 @@ fetch(url)
 
       createCard(movie);
     });
+    console.log(data);
   });
+
+//한자리 숫자 앞에 0 넣어주는 함수
+function numberPad(n, width) {
+  n = n + "";
+  return n.length >= width ? n : new Array(width - n.length + 1).join("0") + n;
+}
+
+// date 포맷 함수
+function dateFormat() {
+  var dt = new Date();
+  const year = dt.getFullYear().toString();
+  const month = (dt.getMonth() + 1).toString();
+  const date = numberPad(dt.getDate(), 2).toString();
+  const formatedDate = year + month + date;
+  return formatedDate;
+}
+
+// 숫자 세자리마다 , 찍어주는 함수
+function numFormat(n) {
+  return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 // daily boxoffice section
 // 상단 1위 영화 나타나는 섹션에서 제목, 누적 매출액, 누적 관객수 value부분 가져오기
