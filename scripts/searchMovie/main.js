@@ -1,10 +1,41 @@
 const apiUrl = {
-    daily: "http://13.125.36.145:8080/boxoffice/daily",
-    weekly: "http://13.125.36.145:8080/boxoffice/weekly",
-    list: "http://13.125.36.145:8080/movie/list",
-    info: "http://13.125.36.145:8080/movie/info"
+    movielist: "http://13.125.36.145:8080/movie/list"
   }
+
+  async function getMovieList(movieNm) {
+    const movieListUrl = apiUrl.movielist + "?movieNm=" + movieNm;
+    const movieListData = await fetch(movieListUrl).then(res => res.json());
+    const MovieListList = dailyData.dailyBoxOfficeList;
   
+    dailyMovieList.forEach((movie, i) => {
+      if (i === 0)
+        setMainResult(movie);
+      createCard2(movie)
+    })
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function createCard(url, poster, score, title, release, date, genre, nation, director) {
   const movieboxlist = document.querySelector(".wrap__movie_main__movielist");
   // 문서에서 .wrap__movie_main__movielist 클래스를 가진 요소를
@@ -20,7 +51,7 @@ function createCard(url, poster, score, title, release, date, genre, nation, dir
 
         <a href="#">
             <div class="poster">
-                <img src="${url}" alt="${poster}"/>
+                <img src="${"https://movie-phinf.pstatic.net/20190528_36/1559024198386YVTEw_JPEG/movie_image.jpg"}" alt="${poster}"/>
             </div>
             <div class="starscore">
                 <h1>${score}</h1>
