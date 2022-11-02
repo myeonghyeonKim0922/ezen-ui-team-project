@@ -75,6 +75,12 @@
   font-weight: bold;
 }
 
+.info__item--title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .main-result__link {
   height: 60%;
   width: 80px;
@@ -96,11 +102,12 @@
 }
 
 .result {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  width: 100%;
+  row-gap: 40px;
+  justify-items: center;
+  justify-content: center;
 }
 
 .card {
@@ -151,5 +158,11 @@
 }
 
 .card__info {
-  padding: 20px 8px;
+  padding: 0 8px;
+}
+
+.info__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
