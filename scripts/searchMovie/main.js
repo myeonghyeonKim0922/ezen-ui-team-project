@@ -1,4 +1,4 @@
-function createCard(score, title, release, date, genre, nation, director) {
+function createCard(url, poster, score, title, release, date, genre, nation, director) {
   const movieboxlist = document.querySelector(".wrap__movie_main__movielist");
   // 문서에서 .wrap__movie_main__movielist 클래스를 가진 요소를
   // 상수 movieboxlist 에 선언
@@ -13,7 +13,7 @@ function createCard(score, title, release, date, genre, nation, director) {
 
         <a href="#">
             <div class="poster">
-                
+                <img src="${url}" alt="${poster}"/>
             </div>
             <div class="starscore">
                 <h1>${score}</h1>
@@ -51,4 +51,4 @@ function createCard(score, title, release, date, genre, nation, director) {
   // movieboxlist 하위에 movieBox 추가
 }
 
-createCard("★10.0", "기생충", "개봉중", "날짜", "장르", "국가", "감독이름");
+createCard("url", "기생충 포스터", "★10.0", "기생충", "개봉중", "날짜", "장르", "국가", "감독이름");
