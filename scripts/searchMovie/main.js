@@ -1,39 +1,54 @@
-function createCard () {
-    // const movieBox = document.createElement("div");
-    const movieboxMovie = document.createElement("div");
-    const movieBoxLink = document.createElement("a");
-    const movieBoxPoster = document.createElement("div");
-    const starScore = document.createElement("div");
-    const movieTitle = document.createElement("div");
-    const releaseButton = document.createElement("div");
-    const movieInfo = document.createElement("div");
+function createCard(score, title, release, date, genre, nation, director) {
+  const movieboxlist = document.querySelector(".wrap__movie_main__movielist");
+  // 문서에서 .wrap__movie_main__movielist 클래스를 가진 요소를
+  // 상수 movieboxlist 에 선언
 
-    const infoReleaseTitle = document.createElement("span");
-    const infoReleaseData = document.createElement("span");
-    const infoGenreTitle = document.createElement("span");
-    const infoGenreData = document.createElement("span");
-    const infoNationTitle = document.createElement("span");
-    const infoNationData = document.createElement("span");
-    const infoDirectorTitle = document.createElement("span");
-    const infoDirectorData = document.createElement("span");
+  const movieBox = document.createElement("div");
+  // movieBox 라는 div 만듬
 
-    const underbar = document.createElement("div");
+  movieBox.classList.add("movie_list__movieboxes__movie");
+  // movieBox 에 movie_list__movieboxes__movie 클래스 추가
 
+  movieBox.innerHTML = `
 
-    // movieBox.classList.add("movie_list__movieboxes__movie");
-    movieboxMovie.classList.add("movie_list__movieboxes__movie")
-    starScore.classList.add("starscore");
-    movieTitle.classList.add("movie_title");
+        <a href="#">
+            <div class="poster">
+                
+            </div>
+            <div class="starscore">
+                <h1>${score}</h1>
+            </div>
+            <div class="movie_title">
+                <h1>${title}</h1>
+                <div class="release">${release}</div>
+            </div>
 
+            <div class="movieboxes__info">
+                <div>
+                <span class="release-title">개봉일</span>
+                <span class="info" id="releaseDate">${date}</span>
+                </div>
+                <div>
+                <span class="genre-title">장르</span>
+                <span class="info" id="genre">${genre}</span>
+                </div>
+                <div>
+                <span>국가</span>
+                <span class="info" id="nation">${nation}</span>
+                </div>
+                <div>
+                <span>감독</span>
+                <span class="info" id="director">${director}</span>
+                </div>
+            </div>
 
+            <div class="underbar"></div>
+        </a>
 
-    const movielist = document.querySelector(".wrap__movie_main__movielist");
-    const posterlist = document.querySelector(".poster");
-    const starScoreList = document.querySelector(".starscore");
+    `;
 
-    list.appendChild(movieBox);
-    movieBox.appendChild(movieBoxLink);
-
+  movieboxlist.appendChild(movieBox);
+  // movieboxlist 하위에 movieBox 추가
 }
 
-createCard();
+createCard("★10.0", "기생충", "개봉중", "날짜", "장르", "국가", "감독이름");

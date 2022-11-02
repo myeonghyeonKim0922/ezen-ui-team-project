@@ -120,9 +120,11 @@ i {
 
 .wrap__movie_main__movielist > div > a > .poster {
     background-color: var(--main-color);
+
     width: 216px;
     height: 320px;
     float: left;
+
 }
 
 /* 별점 */
@@ -158,7 +160,7 @@ i {
 }
 
 .wrap__movie_main__movielist > div > a > .movie_title .release {
-    width: 40px;
+    display: inline-block;
     border-radius: 3px;
     padding: 2px;
     font-size: 10px;
