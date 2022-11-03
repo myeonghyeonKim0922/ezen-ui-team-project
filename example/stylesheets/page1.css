@@ -12,7 +12,7 @@
   backdrop-filter: blur(5px);
 }
 
-.fa-compact-disc {
+.loading .fa-compact-disc {
   font-size: 40px;
   color: white;
   position: absolute;
