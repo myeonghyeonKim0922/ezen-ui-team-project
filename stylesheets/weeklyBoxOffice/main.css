@@ -36,6 +36,20 @@
   float: left;
 }
 
+.date__lt button {
+  border: none;
+  background-color: #e8e9eb;
+  font-size: 1.2rem;
+  color: #6868ac;
+}
+
+.date__gt button {
+  border: none;
+  background-color: #e8e9eb;
+  font-size: 1.2rem;
+  color: #6868ac;
+}
+
 .movie__card {
   position: relative;
   width: 240px;
