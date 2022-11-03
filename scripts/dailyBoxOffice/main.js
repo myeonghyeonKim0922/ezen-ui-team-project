@@ -1,7 +1,7 @@
 //API call
 // var url = "http://13.125.36.145:8080/boxoffice/daily";
-// var url = "http://localhost:8080/boxoffice/daily";
-// url += "?targetDt=20221030";
+//  var url = "http://localhost:8080/boxoffice/daily";
+//  url += "?targetDt=20221030";
 url = "http://13.125.36.145:8080/boxoffice/daily/dummy";
 
 fetch(url)
@@ -40,6 +40,7 @@ function numFormat(n) {
 // daily boxoffice section
 // 상단 1위 영화 나타나는 섹션에서 제목, 누적 매출액, 누적 관객수 value부분, 1위 영화 링크 가져오기
 function dailyBoxoffice(data) {
+  const rank = document.querySelector('.rank')
   const movieName = document.querySelector(".movie__name");
   const salesAccValue = document.querySelector(".salesAcc__value");
   const audiAccValue = document.querySelector(".audiAcc__value");
@@ -48,7 +49,9 @@ function dailyBoxoffice(data) {
   const megaLink = document.querySelector('.link__theater--mega')
   const cgvLink = document.querySelector('.link__theater--cgv')
 
+ 
   moviePoster.setAttribute("src", data.poster);
+  rank.innerText = data.rank;
   movieName.innerText = data.movieNm;
   salesAccValue.innerText = numFormat(data.salesAcc) + "원";
   audiAccValue.innerText = numFormat(data.audiAcc) + "명";
@@ -65,16 +68,20 @@ function createCard(data) {
   const content = document.createElement("div");
   content.classList.add("movie__content");
 
-  content.innerHTML = `<a href="#">
+  content.innerHTML = `<a href="#" class='movie__info'>
                 <div class="movie__content__top">
-                  <img src="${data.poster}" alt="poster" />
+                  <div class="poster__section">
+                    <img src="${data.poster}" alt="poster" />
+                    <div class="movie__rank">${data.rank}</div>
+                    <div class="movie__oldandnew">${data.rankOldAndNew}</div>
+                  </div>
                   <div class="content__title">${data.movieNm}</div>
                 </div>
                 <div class="movie__content__bottom">
                   <div class="content__info">
                     <div class="openDt">
                       <p>개봉일</p>
-                      <div class="openDt__value">${data.openDt}</div>
+                      <div class="openDt__value">${data.openDt.replaceAll('-','/')}</div>
                     </div>
                     <div class="audiAcc">
                       <p>누적 관객수</p>
