@@ -12,7 +12,7 @@ body {
 }
 
 .daily__boxoffice {
-  padding: 40px;
+  margin: 128px 84px 43px 84px;
 }
 
 .daily__boxoffice h1 {
@@ -260,3 +260,9 @@ body {
 .audiAcc .audiAcc__value {
   font-size: 16px;
 }
+
+/* @media all and(max-width: 760px){
+    .movie__salesAcc{
+        display:inline;
+    }
+} */
