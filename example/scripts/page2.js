@@ -54,12 +54,13 @@ function setImgViewer(images) {
 }
 // 영화 정보 가져와서 데이터 넣기
 function getMovieInfo() {
+  toggleLoading(true);
   // url에서 영화 코드 가져오기
   const url = new URL(window.location.href);
   const movieCd = url.searchParams.get("movieCd");
 
-  // const infoUrl = `${apiUrl.info}?movieCd=${movieCd}`;
-  const infoUrl = apiUrl.infoDummy;
+  const infoUrl = `${apiUrl.info}?movieCd=${movieCd}`;
+  // const infoUrl = apiUrl.infoDummy;
   fetch(infoUrl)
     .then(res => res.json())
     .then(data => {
@@ -67,7 +68,13 @@ function getMovieInfo() {
       setHeadData(movie);
       setContentData(movie);
       setImgViewer(movie.images);
+      toggleLoading(false);
     })
+}
+
+function toggleLoading(on) {
+  const loadingEl = document.querySelector(".loading");
+  loadingEl.style.display = on ? "block": "none";
 }
 
 (function main() {

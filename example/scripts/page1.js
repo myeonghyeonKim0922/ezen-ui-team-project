@@ -51,8 +51,9 @@ function setMainResult(movie) {
 }
 // 일간 영화정보 가져와서 1위 영화 정보, 카드 만들기
 function getDailyBoxOffice(targetDt) {
-  // const dailyUrl = apiUrl.daily + "?targetDt=" + targetDt;
-  const dailyUrl = apiUrl.dailyDummy;
+  toggleLoading(true);
+  const dailyUrl = apiUrl.daily + "?targetDt=" + targetDt;
+  // const dailyUrl = apiUrl.dailyDummy;
   fetch(dailyUrl)
     .then(res => res.json())
     .then(dailyData => {
@@ -62,12 +63,14 @@ function getDailyBoxOffice(targetDt) {
         if (i === 0) setMainResult(movie);
         createCard(movie)
       })
+      toggleLoading(false);
     })
 }
 // 검색 결과 가져와서 카드 만들기
 function getMovieList(movieNm) {
-  // const url = apiUrl.list + "?movieNm=" + movieNm;
-  const url = apiUrl.listDummy;
+  toggleLoading(true);
+  const url = apiUrl.list + "?movieNm=" + movieNm;
+  // const url = apiUrl.listDummy;
   fetch(url)
     .then(res => res.json())
     .then(listData => {
@@ -75,6 +78,7 @@ function getMovieList(movieNm) {
 
       document.querySelector(".result").innerHTML = "";
       movieList.forEach(movie => createCard(movie));
+      toggleLoading(false);
     })
 }
 // 영화 검색
@@ -96,6 +100,11 @@ function numToString(num) {
   }
 
   return arr.join("");
+}
+
+function toggleLoading(on) {
+  const loadingEl = document.querySelector(".loading");
+  loadingEl.style.display = on ? "block": "none";
 }
 
 (function main() {
