@@ -28,7 +28,8 @@ function dateFormat() {
   const year = dt.getFullYear().toString();
   const month = (dt.getMonth() + 1).toString();
   const date = numberPad(dt.getDate(), 2).toString();
-  const formatedDate = year + month + date;
+  // const formatedDate = year + month + date;
+  const formatedDate = `${year}${month}${date}`;
   return formatedDate;
 }
 
@@ -68,7 +69,7 @@ function createCard(data) {
   const content = document.createElement("div");
   content.classList.add("movie__content");
 
-  content.innerHTML = `<a href="#" class='movie__info'>
+  content.innerHTML = `<a href="" class='movie__info'>
                 <div class="movie__content__top">
                   <div class="poster__section">
                     <img src="${data.poster}" alt="poster" />
