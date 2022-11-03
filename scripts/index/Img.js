@@ -14,13 +14,14 @@ class Img {
 
   pixels;
 
-  constructor(offCtx, srcSet, width) {
+  constructor(offCtx, width, srcSet) {
     this.offCtx = offCtx;
     this.srcSet = srcSet;
     this.srcIdx = -1;
     this.isChanging = false;
 
     const image = new Image();
+    image.crossOrigin = "Anonymous"
 
     this.ratio = 1.414; 
     this.image = image;
@@ -42,12 +43,13 @@ class Img {
     }
   }
 
-  changeImg() {
+  changeImg(idx) {
     this.isChanging = true;
     this.srcIdx = (this.srcIdx + 1) >= this.srcSet.length ? 0 : this.srcIdx + 1;
 
     this.nxtImg = new Image();
-    this.nxtImg.src = this.srcSet[this.srcIdx];
+    // this.nxtImg.src = this.srcSet[this.srcIdx];
+    this.nxtImg.src = this.srcSet[idx];
 
     this.nxtImg.onload = () => {
       this.offCtx.clearRect(0, 0, this.offCtx.canvas.width, this.offCtx.canvas.height);

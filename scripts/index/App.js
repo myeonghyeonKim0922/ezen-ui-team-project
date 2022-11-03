@@ -9,7 +9,8 @@ class App {
   interval;
 
   canvas = new Canvas();
-  img = new Img(this.canvas.offCtx, ["../img/poster1.jpg", "../img/poster2.jpg", "../img/poster3.jpg", "../img/poster4.jpg"], 44);
+  img;
+  // img = new Img(this.canvas.offCtx, 44, ["../img/poster1.jpg", "../img/poster2.jpg", "../img/poster3.jpg", "../img/poster4.jpg"]);
 
   noiseMouse;
   mouseCircle;
@@ -17,10 +18,12 @@ class App {
   pixels = [];
   circles = [];
 
-  constructor() {
+  constructor(srcList) {
+  this.img = new Img(this.canvas.offCtx, 44, [...srcList]);
     this.init();
     // this.animate();
     this.setResize();
+
     this.interval = setInterval(() => {
       this.animate();
     }, 1000/30);

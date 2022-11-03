@@ -18,25 +18,28 @@
 
 .canvas__wrap {
   height: 100%;
-  width: 50%;
-  float: left;
+  width: 100%;
+  overflow: hidden;
 }
 
 canvas {
 }
 
 .movie {
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
 
-  width: 50%;
+  width: 45%;
   height: 100%;
-  padding: 0 80px;
-  padding-top: 15%;
+  padding: 0 5%;
+  /* padding-left: 5%; */
+  padding-bottom: 5%;
   box-sizing: border-box;
 
   display: flex;;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
 
   color: var(--white-color1);
 }
@@ -45,9 +48,10 @@ canvas {
   margin: 32px 0;
   font-size: 32px;
   font-weight: bold;
+  word-break: keep-all;
 }
 
-.movie__dirs, .movie__actors {
+.movie__open-dt, .movie__audacc {
   font-size: 20px;
   margin: 10px 0;
 }
@@ -81,10 +85,15 @@ canvas {
     top: 60px;
   }
 
-  .canvas__wrap {
-    width: 100%;
-  }
+  /* .canvas__wrap {
+
+  }  */
 }
 
-@media screen and (max-width: 768) {
+@media screen and (max-width: 768px) {
+  .movie {
+    width: 100%;
+    padding: 0 8%;
+    padding-bottom: 5%;
+  }
 }

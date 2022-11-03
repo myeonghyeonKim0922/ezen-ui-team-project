@@ -11,3 +11,17 @@ export function debounce(callback, limit = 100) {
       }, limit)
   }
 }
+
+export function numToString(num) {
+  const strArr = num.toString().split("");
+
+  const arr = [];
+  for (let i = strArr.length - 1; i >= 0; i--) {
+    if ((arr.length + 1) % 4 === 0) {
+      arr.unshift(",");
+    }
+    arr.unshift(strArr[i]);
+  }
+
+  return arr.join("");
+}
