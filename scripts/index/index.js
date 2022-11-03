@@ -1,10 +1,13 @@
 import App from "./App.js"
 import { numToString } from './utils.js';
+import { toggleLoading } from "../share/loading.js";
 
 onload = () => {
+  toggleLoading(true);
   let idx = 0;
 
-  fetch("http://localhost:8080/boxoffice/daily?targetDt=20221101")
+  // fetch("http://localhost:8080/boxoffice/daily?targetDt=20221102")
+  fetch("http://localhost:8080/boxoffice/daily/dummy")
     .then(res => res.json())
     .then(data => {
       const movieList = data.dailyBoxOfficeList;
@@ -13,11 +16,13 @@ onload = () => {
 
       const app = new App(imgList);
 
+      toggleLoading(false);
+
       setInterval(() => {
         idx = idx + 1 > movieList.length - 1 ? 0 : idx + 1;
         setMovieInfo(movieList[idx])
         app.img.changeImg(idx);
-      }, 5000);
+      }, 10000);
     })
 }
 

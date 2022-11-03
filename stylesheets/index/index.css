@@ -49,15 +49,18 @@ canvas {
   font-size: 32px;
   font-weight: bold;
   word-break: keep-all;
+  text-shadow: 0 0 16px rgba(0, 0, 0, 1);
 }
 
 .movie__open-dt, .movie__audacc {
   font-size: 20px;
   margin: 10px 0;
+  text-shadow: 0 0 16px rgba(0, 0, 0, 1);
 }
 
 .movie__goto-info {
   padding: 20px 0;
+  text-shadow: 0 0 16px rgba(0, 0, 0, 1);
 }
 
 .movie__goto-info a {
@@ -95,5 +98,15 @@ canvas {
     width: 100%;
     padding: 0 8%;
     padding-bottom: 5%;
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }

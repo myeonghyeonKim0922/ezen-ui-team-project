@@ -19,7 +19,7 @@ class App {
   circles = [];
 
   constructor(srcList) {
-  this.img = new Img(this.canvas.offCtx, 44, [...srcList]);
+    this.img = new Img(this.canvas.offCtx, 64, [...srcList]);
     this.init();
     // this.animate();
     this.setResize();
@@ -28,9 +28,9 @@ class App {
       this.animate();
     }, 1000/30);
 
-    addEventListener("click", () => {
-      this.img.changeImg();
-    })
+    // addEventListener("click", () => {
+    //   this.img.changeImg();
+    // })
   }
 
   init() {
@@ -74,7 +74,7 @@ class App {
     this.setMouse(offset);
 
     if (changeImg)
-      this.img.changeImg();
+      this.img.changeImg(0);
   }
 
   addCircles(radius, offset) {
