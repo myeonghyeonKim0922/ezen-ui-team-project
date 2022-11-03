@@ -3762,34 +3762,121 @@ const dummyData = {
   },
 };
 
-const title = document.querySelector(".info__title");
-const titleEn = document.querySelector(".info__title_ensub");
+function information () {
+  const title = document.querySelector(".info__title");
+  const titleEn = document.querySelector(".info__title_ensub");
 
-const infoItemDir = document.querySelector(".info__item--dir");
-const infoItemGrade = document.querySelector(".info__item--grade");
-const infoItemGenre = document.querySelector(".info__item--genre");
-const infoItemStartDt = document.querySelector(".info__item--start-dt");
-const infoItemOpenDt = document.querySelector(".info__item--open-dt");
-const infoItemCountry = document.querySelector(".info__item--country");
+  const infoItemDir = document.querySelector(".info__item--dir");
+  const infoItemGrade = document.querySelector(".info__item--grade");
+  const infoItemGenre = document.querySelector(".info__item--genre");
+  const infoItemStartDt = document.querySelector(".info__item--start-dt");
+  const infoItemOpenDt = document.querySelector(".info__item--open-dt");
+  const infoItemCountry = document.querySelector(".info__item--country");
 
-title.innerText = dummyData.movieInfo.movieNm;
-titleEn.innerText = dummyData.movieInfo.movieNmEn;
+  title.innerText = dummyData.movieInfo.movieNm;
+  titleEn.innerText = dummyData.movieInfo.movieNmEn;
 
-infoItemDir.innerText =
-  "감독 :" + " " + dummyData.movieInfo.directors[0].peopleNm;
-infoItemGrade.innerText =
-  "상영등급 :" + " " + dummyData.movieInfo.audits[0].watchGradeNm;
-infoItemGenre.innerText =
-  "장르 :" + " " + dummyData.movieInfo.genres[0].genreNm;
-infoItemStartDt.innerText = "제작년도 :" + " " + dummyData.movieInfo.prdtYear;
-infoItemOpenDt.innerText = "개봉년도 :" + " " + dummyData.movieInfo.openDt;
-infoItemCountry.innerText =
-  "제작국가 :" + " " + dummyData.movieInfo.nations[0].nationNm;
+  infoItemDir.innerText =
+    "감독 :" + " " + dummyData.movieInfo.directors[0].peopleNm;
+  infoItemGrade.innerText =
+    "상영등급 :" + " " + dummyData.movieInfo.audits[0].watchGradeNm;
+  infoItemGenre.innerText =
+    "장르 :" + " " + dummyData.movieInfo.genres[0].genreNm;
+  infoItemStartDt.innerText = "제작년도 :" + " " + dummyData.movieInfo.prdtYear;
+  infoItemOpenDt.innerText = "개봉년도 :" + " " + dummyData.movieInfo.openDt;
+  infoItemCountry.innerText =
+    "제작국가 :" + " " + dummyData.movieInfo.nations[0].nationNm;
 
-// ==========================포스터
-const posterImg = document.querySelector(".movie__poster img");
+}
 
-posterImg.setAttribute("src", dummyData.movieInfo.posterSrc);
+function posterView () {
+  const posterImg = document.querySelector(".movie__poster img");
+
+  posterImg.setAttribute("src", dummyData.movieInfo.posterSrc);
+}
+
+function contentStroylineMainStaff() {
+   const contentMainShort = document.querySelector(".content__main--short");
+   const contentMainLong = document.querySelector(".content__main--long");
+
+   contentMainShort.innerText = dummyData.movieInfo.summary1;
+   contentMainLong.innerText = dummyData.movieInfo.summary2;
+
+  const contentMain = document.querySelector(".content__main");
+  const contentMainWrap = document.querySelector(".content__main--wrap");
+  const staffWrap = document.querySelector(".staffs");
+  const buttonChange = document.querySelector(".content__tab--sum a");
+  const buttonChange2 = document.querySelector(".content__tab--staff a");
+
+  buttonChange.addEventListener("click", () => {
+    contentMainShort.innerText = dummyData.movieInfo.summary1;
+    contentMainLong.innerText = dummyData.movieInfo.summary2;
+    contentMainWrap.style.display = "block";
+    staffWrap.style.display = "none";
+  });
+
+  buttonChange2.addEventListener("click", () => {
+    contentMainWrap.style.display = "none";
+    staffWrap.style.display = "grid";
+
+    staffWrap.innerHTML = "";
+
+    const staffs = dummyData.movieInfo.staffs;
+    const filStaffs = staffs.filter((staffs) => {
+      if (staffs.staffRoleNm === "조감독" || staffs.staffRoleNm === "제작") {
+        return true;
+      }
+    });
+
+    const staffJob = document.createElement("div");
+    staffJob.innerText = "참여스테프";
+    staffWrap.append(staffJob);
+    staffJob.classList.add("staffJob");
+
+    const stafflistWrap = document.createElement("div");
+    stafflistWrap.classList.add("staffs__wrap");
+    staffWrap.append(stafflistWrap);
+
+    filStaffs.forEach((staff, index) => {
+      const staffList = document.createElement("div");
+      staffList.classList.add("staffs__item");
+      staffList.innerText = "이름 : " + staff.peopleNm;
+      stafflistWrap.append(staffList);
+    });
+
+    console.log(filStaffs);
+  });
+}
+
+function addImgToSwiper() {
+  const mySwiper2 = document.querySelector(".mySwiper2 .swiper-wrapper");
+  const mySwiper = document.querySelector(".mySwiper .swiper-wrapper");
+
+  const imgs = dummyData.movieInfo.images;
+
+  console.log(imgs);
+
+  imgs.forEach((img) => {
+    const swiperSlide = document.createElement("div");
+    swiperSlide.classList.add("swiper-slide");
+    swiperSlide.innerHTML = `<img src="${img}" />`;
+
+    const swiperSlide2 = swiperSlide.cloneNode(true);
+
+    mySwiper2.appendChild(swiperSlide2);
+    mySwiper.appendChild(swiperSlide);
+  });
+}
+
+addImgToSwiper(); 
+
+contentStroylineMainStaff();
+
+posterView();
+
+information();
+
+
 
 var swiper = new Swiper(".mySwiper", {
   loop: true,

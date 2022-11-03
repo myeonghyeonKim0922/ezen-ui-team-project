@@ -63,8 +63,10 @@
             <img src="" alt="poster-img" />
           </div>
           <div class="movie__info info">
-            <div class="info__title">제목</div>
-            <div class="info__title_ensub">영어제목</div>
+            <div class="title__wrap">
+              <div class="info__title">제목</div>
+              <div class="info__title_ensub">영어제목</div>
+            </div>
             <div class="info__grid">
               <div class="info__item info__item--dir">
                 감독명<span>감독</span>
@@ -90,16 +92,24 @@
         <div class="movie__content content">
           <div class="content__tab">
             <div class="content__tab--sum">
-              <a href="#">줄거리</a>
+              <a>줄거리</a>
             </div>
             <div class="content__tab--staff">
-              <a href="#">참여 스태프</a>
+              <a>참여 스태프</a>
             </div>
           </div>
-          <div class="content__main">내용</div>
+          <div class="content__main">
+            <div class="content__main--wrap">
+              <div class="content__main--short">짧은 줄거리</div>
+              <div class="content__main--long">긴 줄거리</div>
+            </div>
+            <div class="staffs">
+              <!-- <div class="staffs__item"></div> -->
+            </div>
+          </div>
         </div>
         <div class="movie__still-cut">
-          <div class="still-cut__header">스틸 컷</div>
+          <div class="still-cut__header">Still</div>
           <div class="still-cut__swiper">
             <div
               style="
@@ -109,7 +119,7 @@
               class="swiper mySwiper2"
             >
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <!-- <div class="swiper-slide">
                   <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
                 </div>
                 <div class="swiper-slide">
@@ -138,14 +148,14 @@
                 </div>
                 <div class="swiper-slide">
                   <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                </div>
+                </div> -->
               </div>
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
             </div>
             <div thumbsSlider="" class="swiper mySwiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <!-- <div class="swiper-slide">
                   <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
                 </div>
                 <div class="swiper-slide">
@@ -174,7 +184,7 @@
                 </div>
                 <div class="swiper-slide">
                   <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
