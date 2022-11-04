@@ -1,8 +1,9 @@
 //API call
-// var url = "http://13.125.36.145:8080/boxoffice/daily";
-//  var url = "http://localhost:8080/boxoffice/daily";
-//  url += "?targetDt=20221030";
-url = "http://13.125.36.145:8080/boxoffice/daily/dummy";
+// url = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/'
+// url +=
+// url += "?targetDt={dateFormat()}";
+// url = "http://13.125.36.145:8080/boxoffice/daily/dummy";
+url = "http://13.125.36.145:8080/boxoffice/daily?targetDt=" + dateFormat();
 
 // 영화 정보를 기반으로 카드 만들기
 function createCard(data) {
@@ -10,30 +11,32 @@ function createCard(data) {
   const content = document.createElement("div");
   content.classList.add("movie__content");
 
-  content.innerHTML = `<a href="./movieInfo.html?movieCd=${data.movieCd}" class='movie__info'>
-                <div class="movie__content__top">
-                  <div class="poster__section">
-                    <img src="${data.poster}" alt="poster" />
-                    <div class="movie__rank">${data.rank}</div>
-                    <div class="movie__oldandnew">${data.rankOldAndNew}</div>
-                  </div>
-                  <div class="content__title">${data.movieNm}</div>
-                </div>
-                <div class="movie__content__bottom">
-                  <div class="content__info">
-                    <div class="openDt">
-                      <p>개봉일</p>
-                      <div class="openDt__value">${data.openDt.replaceAll('-','/')}</div>
-                    </div>
-                    <div class="audiAcc">
-                      <p>누적 관객수</p>
-                      <div class="audiAcc__value">${numFormat(
-                        data.audiAcc
-                      )}명</div>
-                    </div>
-                  </div>
-                </div>
-              </a>`;
+  const poster = data.poster || "../img/poster-img.jpg";
+  content.innerHTML = `
+    <a href="./movieInfo.html?movieCd=${data.movieCd}" class='movie__info'>
+      <div class="movie__content__top">
+        <div class="poster__section">
+          <img src="${poster}" alt="poster" />
+          <div class="movie__rank">${data.rank}</div>
+          <div class="movie__oldandnew">${data.rankOldAndNew}</div>
+        </div>
+        <div class="content__title">${data.movieNm}</div>
+      </div>
+      <div class="movie__content__bottom">
+        <div class="content__info">
+          <div class="openDt">
+            <p>개봉일</p>
+            <div class="openDt__value">${data.openDt.replaceAll('-','/')}</div>
+          </div>
+          <div class="audiAcc">
+            <p>누적 관객수</p>
+            <div class="audiAcc__value">${numFormat(
+              data.audiAcc
+            )}명</div>
+          </div>
+        </div>
+      </div>
+    </a>`;
   result.appendChild(content);
 }
 
