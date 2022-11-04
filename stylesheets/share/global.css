@@ -129,6 +129,25 @@ body *:not(i) {
   height: 100%;
 }
 
+.loading {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.fa-compact-disc {
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  animation: loading 1s infinite;
+}
+
 /* footer */
 .footer {
   width: 100vw;
@@ -322,5 +341,15 @@ body *:not(i) {
 
   .members__item {
     margin: 0;
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }

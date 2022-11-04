@@ -44,7 +44,7 @@ class Circle {
 
       const dist = getDist(this.x, this.y, mx, my);
       if (dist < this.radius + mr) {
-        let maxRadius = (mr/15) - (dist/mr);
+        let maxRadius = (mr*0.04) - (dist/mr);
         this.radius = this.radius + 1 > maxRadius ? maxRadius : this.radius + 1;
       } else {
         let speed = 0.05;

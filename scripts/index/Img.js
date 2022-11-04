@@ -21,7 +21,6 @@ class Img {
     this.isChanging = false;
 
     const image = new Image();
-    image.crossOrigin = "Anonymous"
 
     this.ratio = 1.414; 
     this.image = image;
