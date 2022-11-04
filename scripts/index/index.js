@@ -1,17 +1,17 @@
-import App from "./App.js"
-import { numToString } from './utils.js';
+import App from "./App.js";
+import { numToString } from "./utils.js";
 import { toggleLoading } from "../share/loading.js";
 
 onload = () => {
   toggleLoading(true);
   let idx = 0;
 
-  // fetch("http://localhost:8080/boxoffice/daily?targetDt=20221102")
-  fetch("http://localhost:8080/boxoffice/daily/dummy")
-    .then(res => res.json())
-    .then(data => {
+  fetch("http://localhost:8080/boxoffice/daily?targetDt=20221102")
+    // fetch("http://localhost:8080/boxoffice/daily/dummy")
+    .then((res) => res.json())
+    .then((data) => {
       const movieList = data.dailyBoxOfficeList;
-      const imgList = movieList.map(movie => movie.posterSmall);
+      const imgList = movieList.map((movie) => movie.posterSmall);
       setMovieInfo(movieList[idx]);
 
       const app = new App(imgList);
@@ -20,11 +20,11 @@ onload = () => {
 
       setInterval(() => {
         idx = idx + 1 > movieList.length - 1 ? 0 : idx + 1;
-        setMovieInfo(movieList[idx])
+        setMovieInfo(movieList[idx]);
         app.img.changeImg(idx);
       }, 10000);
-    })
-}
+    });
+};
 
 function setMovieInfo(movie) {
   const title = document.querySelector(".movie__title");
@@ -36,5 +36,8 @@ function setMovieInfo(movie) {
   openDt.innerText = movie.openDt;
   audacc.innerText = numToString(movie.audiAcc) + "명";
 
-  gotoBtn.setAttribute("href", "/pages/movieInfo.html?movieCd=" + movie.movieCd);
+  gotoBtn.setAttribute(
+    "href",
+    "/pages/movieInfo.html?movieCd=" + movie.movieCd
+  );
 }
