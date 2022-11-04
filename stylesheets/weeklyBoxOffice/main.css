@@ -36,6 +36,22 @@
   float: left;
 }
 
+.date__lt button {
+  border: none;
+  background-color: #e8e9eb;
+  font-size: 1.2rem;
+  color: #6868ac;
+  cursor: pointer;
+}
+
+.date__gt button {
+  border: none;
+  background-color: #e8e9eb;
+  font-size: 1.2rem;
+  color: #6868ac;
+  cursor: pointer;
+}
+
 .movie__card {
   position: relative;
   width: 240px;
@@ -163,7 +179,7 @@
   height: 428px;
 }
 
-.swiper-slide:nth-child(1n) {
+/* .swiper-slide:nth-child(1n) {
   background-color: rgb(206, 17, 17);
 }
 
@@ -201,4 +217,4 @@
 
 .swiper-slide:nth-child(10n) {
   background-color: rgb(54, 94, 77);
-}
+} */

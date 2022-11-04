@@ -10,10 +10,7 @@
       href="../lib/fontawesome-free-6.2.0-web/css/all.min.css"
     />
     <link rel="stylesheet" href="../stylesheets/weeklyBoxOffice/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="../lib/swiper-8.4.4/swiper-bundle.min.css" />
     <title>주간 박스오피스</title>
   </head>
   <body>
@@ -90,19 +87,24 @@
 
         <div class="movie__date">
           <ul>
-            <li class="date__lt" , id="left">
-              <i class="fa-solid fa-caret-left"></i>
+            <li class="date__lt" id="left">
+              <button class="lt__button" onclick="lt()">
+                <i class="fa-solid fa-caret-left"></i>
+              </button>
             </li>
             <li class="date">
-              <em>22.10.24 ~ 22.10.30</em>
+              <em class="date__start">2022.10.24</em> ~
+              <em class="date__end">2022.10.30</em>
             </li>
             <li class="date__gt" id="right">
-              <i class="fa-solid fa-caret-right"></i>
+              <button class="gt__button" onclick="gt()">
+                <i class="fa-solid fa-caret-right"></i>
+              </button>
             </li>
           </ul>
         </div>
         <ul class="card__list">
-          <!-- <li>
+          <!-- <li class="card__wrap">
             <div class="movie__card">
               <a href="" class="nav__movieinfo">
               <div class="movie__poster">
@@ -167,7 +169,7 @@
     </footer>
     <script src="../scripts/share/global.js"></script>
     <script src="../scripts/weeklyBoxOffice/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="../lib/swiper-8.4.4/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper(".mySwiper", {
         effect: "cards",
