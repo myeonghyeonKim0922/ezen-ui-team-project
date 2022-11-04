@@ -2,48 +2,78 @@ const ltbutton = document.getElementById(".lt__button");
 const gtbutton = document.getElementById(".gt__button");
 var today = new Date();
 var setdate = new Date(today);
+var setdate2 = new Date(today);
+var setdate3 = new Date(today);
 
-var newdate = 0;
+var mondate = 0;
+var sundate = 0;
 var ltdate = 0;
 
 setdate.setDate(today.getDate() - 7);
+setdate2.setDate(today.getDate() - 7);
+setdate3.setDate(today.getDate() - 7);
 var year = "" + setdate.getFullYear();
 var month = ("0" + (1 + setdate.getMonth())).slice(-2);
 var day = ("0" + setdate.getDate()).slice(-2);
 const movieday = `${year}${month}${day}`;
 
-console.log(movieday);
+// console.log(movieday);
 
 function lt() {
   const datefont = document.querySelector(".date__font");
   setdate.setDate(setdate.getDate() - 7);
-  console.log(setdate);
+  setdate2.setDate(setdate2.getDate() - 7);
+  setdate3.setDate(setdate3.getDate() - 7);
+  // console.log(setdate);
 
   var year = "" + setdate.getFullYear();
   var month = ("0" + (1 + setdate.getMonth())).slice(-2);
   var day = ("0" + setdate.getDate()).slice(-2);
   const movieday = `${year}${month}${day}`;
-  var ltfont = ("0" + (setdate.getDate() - 3)).slice(-2);
-  var gtfont = ("0" + (setdate.getDate() + 3)).slice(-2);
+  const date = new Date();
+  const mon = 1;
+  const sun = 7;
+  const todaysDay = date.getDay();
+  const diffm = todaysDay - mon;
+  const diffs = sun - todaysDay;
+  mondate = setdate2;
+  mondate.setDate(setdate.getDate() - diffm);
+  var dayMon = ("0" + mondate.getDate()).slice(-2);
+  sundate = setdate3;
+  sundate.setDate(setdate.getDate() + diffs);
+  var daySun = ("0" + sundate.getDate()).slice(-2);
+  console.log(setdate3);
   console.log(movieday);
-  datefont.innerText = `${year}.${month}.${ltfont} ~ ${year}.${month}.${gtfont} `;
+  datefont.innerText = `${year}.${month}.${dayMon} ~ ${year}.${month}.${daySun} `;
   apiload(movieday);
 }
 
 function gt() {
   const datefont = document.querySelector(".date__font");
   setdate.setDate(setdate.getDate() + 7);
-  console.log(setdate);
+  setdate2.setDate(setdate2.getDate() + 7);
+  setdate3.setDate(setdate3.getDate() + 7);
 
   var year = "" + setdate.getFullYear();
   var month = ("0" + (1 + setdate.getMonth())).slice(-2);
   var day = ("0" + setdate.getDate()).slice(-2);
   const movieday = `${year}${month}${day}`;
-  var ltfont = ("0" + (setdate.getDate() - 3)).slice(-2);
-  var gtfont = ("0" + (setdate.getDate() + 3)).slice(-2);
-  console.log(ltfont);
+  const date = new Date();
+  const mon = 1;
+  const sun = 7;
+  const todaysDay = date.getDay();
+  const diffm = todaysDay - mon;
+  const diffs = sun - todaysDay;
+  mondate = setdate2;
+  mondate.setDate(setdate.getDate() - diffm);
+  var dayMon = ("0" + mondate.getDate()).slice(-2);
+  sundate = setdate3;
+  sundate.setDate(setdate.getDate() + diffs);
+  var daySun = ("0" + sundate.getDate()).slice(-2);
+  // console.log(setdate3);
+  console.log(movieday);
   // console.log(movieday);
-  datefont.innerText = `${year}.${month}.${ltfont} ~ ${year}.${month}.${gtfont} `;
+  datefont.innerText = `${year}.${month}.${dayMon} ~ ${year}.${month}.${daySun} `;
   apiload(movieday);
 }
 
@@ -57,9 +87,9 @@ function gt() {
 function apiload(movieday) {
   let url = "http://13.125.36.145:8080";
   url += "/boxoffice/weekly";
-  url += "?targetDt=";
-  // url += "/dummy";
-  url += movieday;
+  // url += "?targetDt=";
+  url += "/dummy";
+  // url += movieday;
 
   let data = 0;
   let adata = 0;
