@@ -65,7 +65,12 @@ i {
     float: right;
     color: var(--main-color);
     border-radius: 50px;
+    cursor: pointer;
+}
 
+.wrap__search_box button:active {
+    background-color: blueviolet;
+    color: white;
 }
 
 /* 검색기록 */
@@ -127,6 +132,12 @@ i {
 
 }
 
+.poster img {
+    width: 216px;
+    height: 320px;
+    object-fit: cover;
+}
+
 /* 별점 */
 
 .wrap__movie_main__movielist > div > a > .starscore {
@@ -148,15 +159,20 @@ i {
 
 .wrap__movie_main__movielist > div > a > .movie_title {
     color: var(--black-color);
-    font-size: 24px;
+    font-size: 18px;
     background-color: var(--white-color2);
     width: 296px;
     height: 60px;
     float: right;
+    
+
 }
 
 .wrap__movie_main__movielist > div > a > .movie_title h1 {
     margin: 10px 0px 3px 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .wrap__movie_main__movielist > div > a > .movie_title .release {
@@ -180,7 +196,6 @@ i {
     float: left;
     width: 148px;
     height: 102px;
-    font-display: none;
 }
 
 .movieboxes__info span:not(.info) {
