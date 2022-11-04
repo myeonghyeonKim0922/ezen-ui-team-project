@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+.wrap {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 0;
+  background: beige;
+}
+
 .loading {
   display: none;
   position: fixed;
@@ -23,13 +31,7 @@
   animation: loading 1s infinite;
 }
 
-.wrap {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 80px 0;
-  background: beige;
-}
+
 /* search */
 .search {
   width: 300px;

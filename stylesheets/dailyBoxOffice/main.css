@@ -5,6 +5,26 @@
 body {
   background: #e8e9eb;
 }
+.loading{
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.fa-compact-disc {
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  animation: loading 1s infinite;
+}
+
 /*first movie div*/
 .content {
   width: 100%;
@@ -266,3 +286,13 @@ body {
         display:inline;
     }
 } */
+
+@keyframes loading {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
