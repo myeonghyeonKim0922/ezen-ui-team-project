@@ -41,7 +41,17 @@
   <!-- main -->
   <main class="main">
     <div class="main__wrap wrap">
-
+      <div id="root">
+        <div class="canvas__wrap"></div>
+        <div class="movie">
+          <div class="movie__title">TITLE</div>
+          <div class="movie__open-dt">DIRS</div>
+          <div class="movie__audacc">ACTORS</div>
+          <div class="movie__goto-info">
+            <a href="">상세 정보</a>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
   <!-- footer -->
@@ -75,6 +85,7 @@
     </div>
   </footer>
   <script src="../scripts/share/global.js"></script>
-  <script src="./scripts/index/index.js"></script>
+  <script src="./lib/noisejs-master/perlin.js"></script>
+  <script type="module" src="./scripts/index/index.js"></script>
 </body>
 </html>
