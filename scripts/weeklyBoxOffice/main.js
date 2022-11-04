@@ -40,7 +40,7 @@ function apiload(movieday) {
   let url = "http://13.125.36.145:8080";
   url += "/boxoffice/weekly";
   url += "?targetDt=";
-  // url += "/dummy";
+  // url += "/dummy".;
   url += movieday;
 
   let data = 0;
