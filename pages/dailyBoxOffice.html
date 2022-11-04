@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#6868AC" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6868AC">
     <link
       rel="stylesheet"
       href="../lib/fontawesome-free-6.2.0-web/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../stylesheets/dailyBoxOffice/main.css" />
-    <link
-      rel="stylesheet"
-      href="../stylesheets/dailyBoxOffice/dailyBoxOffice.css"
-    />
+    >
+    <link rel="stylesheet" href="../stylesheets/dailyBoxOffice/main.css">
     <title>일간 박스오피스</title>
   </head>
   <body>
@@ -61,21 +57,23 @@
     <!-- main -->
     <main class="main">
       <div class="main__wrap wrap">
-        <!---------------------------------------------------------------------------------------------------------------------------------------->
+        <!-- 작성 -->
+        <div class="loading">
+          <i class="fa-solid fa-compact-disc"></i>
+        </div>
         <div class="content">
           <div class="daily__boxoffice">
             <h1>일간 박스오피스</h1>
           </div>
           <div class="first__movie">
             <div class="first__poster">
-              <a href="#">
-                <img src="" alt="1st_movie" />
-                <!--------------->
+              <a href="#" class="info__link">
+                <img src="#" alt="1위 영화 포스터">
                 <div class="button__movie__info">영화 상세 정보</div>
               </a>
             </div>
             <div class="first__info">
-              <div class="rank">1</div>
+              <div class="rank"></div>
               <div class="movie__name"></div>
               <div class="movie__salesAcc">
                 <p>누적 매출액</p>
@@ -87,28 +85,32 @@
               </div>
             </div>
             <div class="theater__link">
-              <a href="#">
+              <a class="link__theater--mega" href="" target="_blank">
                 <div class="movie__link" id="megabox">
-                  <img src="../img/megabox_logo.png" alt="megabox 링크" />
+                  <img src="../img/megabox_logo.png" alt="megabox 링크">
                   <p>바로가기</p>
                 </div>
               </a>
-              <a href="#">
+              <a class="link__theater--cgv" href="" target="_blank">
                 <div class="movie__link" id="cgv">
-                  <img src="../img/cgv_logo.png" alt="cgv 링크" />
+                  <img src="../img/cgv_logo.png" alt="cgv 링크">
                   <p>바로가기</p>
                 </div>
               </a>
             </div>
           </div>
-          <br />
-          <hr />
-          <!---------- movie list section ------------------------------------------------------------------------------------------------------------------------------>
+          <br>
+          <hr>
+          <!-- movie list section -->
           <div class="movie__list">
             <!-- <div class="movie__content">
-              <a href="#">
+              <a href="" class='movie__info'>
                 <div class="movie__content__top">
-                  <img src="" alt="poster" />
+                  <div class="poster__section">
+                    <img src="#" alt="포스터이미지" />
+                    <div class="movie__rank">1</div>
+                    <div class="movie__oldandnew">new</div>
+                  </div>
                   <div class="content__title">리멤버</div>
                 </div>
                 <div class="movie__content__bottom">
@@ -128,7 +130,6 @@
           </div>
         </div>
       </div>
-      <!---------------------------------------------------------------------------------------------------------------------------------------->
     </main>
     <!-- footer -->
     <footer class="footer">
