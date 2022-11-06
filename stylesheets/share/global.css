@@ -62,15 +62,23 @@ body *:not(i) {
 }
 
 .logo__link {
+  display: block;
   height: 100%;
+  width: 140px;
   padding: 0px 16px;
 
-  font-size: 32px;
+  /* font-size: 32px; */
+  font-size: 0;
   font-weight: bold;
   line-height: 80px;
 
   color: var(--white-color1);
   text-decoration: none;
+
+  background-image: url(../../img/logo/ezm2_256.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* gnb */
@@ -206,8 +214,16 @@ body *:not(i) {
 }
 
 .footer__logo {
+  height: 40px;
+  width: 80px;
   color: var(--white-color1);
   font-size: 20px;
+  font-size: 0;
+
+  background-image: url(../../img/logo/ezm2_128.png);
+  background-size: 100%;
+  background-position: left;
+  background-repeat: no-repeat;
 }
 
 .members__list {
@@ -235,6 +251,7 @@ body *:not(i) {
 
   .logo__link {
     line-height: 60px;
+    width: 80px;
   }
 
   .gnb__list {
@@ -328,6 +345,10 @@ body *:not(i) {
     flex-direction: column;
     align-items: stretch;
     gap: 20px;
+  }
+
+  .footer__logo {
+    width: 60px;
   }
 
   .footer__members {
