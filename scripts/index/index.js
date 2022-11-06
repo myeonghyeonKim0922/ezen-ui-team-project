@@ -6,7 +6,8 @@ onload = () => {
   toggleLoading(true);
   let idx = 0;
 
-  fetch("http://localhost:8080/boxoffice/daily?targetDt=20221102")
+  const targetDt = getYesterdayDateStr();
+  fetch("http://13.125.36.145:8080/boxoffice/daily?targetDt=" + targetDt)
     // fetch("http://localhost:8080/boxoffice/daily/dummy")
     .then((res) => res.json())
     .then((data) => {
@@ -41,3 +42,16 @@ function setMovieInfo(movie) {
     "/pages/movieInfo.html?movieCd=" + movie.movieCd
   );
 }
+
+function getYesterdayDateStr() {
+  const date = new Date();
+  date.setDate(date.getDate() - 1);
+
+  const y = date.getFullYear();
+  const m = date.getMonth() < 0 ? 12 : date.getMonth() + 1;
+  const d = date.getDate();
+
+  return `${y}${("0" + m).slice(-2)}${("0" + d).slice(-2)}`;
+}
+
+getYesterdayDateStr();
