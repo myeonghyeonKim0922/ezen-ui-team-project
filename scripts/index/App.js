@@ -2,7 +2,6 @@ import Canvas from "./Canvas.js";
 import Img from "./Img.js";
 import Circle from "./Circle.js";
 import NoiseMouse from "./noiseMouse.js";
-import MouseCircle from "./MouseCircle.js";
 import { debounce } from "./utils.js";
 
 class App {
@@ -10,10 +9,8 @@ class App {
 
   canvas = new Canvas();
   img;
-  // img = new Img(this.canvas.offCtx, 44, ["../img/poster1.jpg", "../img/poster2.jpg", "../img/poster3.jpg", "../img/poster4.jpg"]);
 
   noiseMouse;
-  mouseCircle;
 
   pixels = [];
   circles = [];
@@ -21,16 +18,11 @@ class App {
   constructor(srcList) {
     this.img = new Img(this.canvas.offCtx, 64, [...srcList]);
     this.init();
-    // this.animate();
     this.setResize();
 
     this.interval = setInterval(() => {
       this.animate();
     }, 1000/30);
-
-    // addEventListener("click", () => {
-    //   this.img.changeImg();
-    // })
   }
 
   init() {
@@ -43,7 +35,6 @@ class App {
     const ctx = this.canvas.ctx;
     ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    // this.mouseCircle.update(ctx, this.noiseMouse.x, this.noiseMouse.y);
     this.noiseMouse.update();
 
     let mouse;
@@ -60,8 +51,6 @@ class App {
         circle.update(ctx, undefined, mouse);
       }
     });
-
-    // requestAnimationFrame(this.animate.bind(this));
   }
 
   onImgLoad(changeImg = true) {
@@ -95,7 +84,6 @@ class App {
     const mouseRangeY = this.img.height * circleOffset;
     const mouseRadius = Math.min(mouseRangeX, mouseRangeY) / 5;
     this.noiseMouse = new NoiseMouse(this.canvas.width/2, this.canvas.height/2, mouseRadius, mouseRangeX, mouseRangeY);
-    // this.mouseCircle = new MouseCircle(this.noiseMouse.x, this.noiseMouse.y, this.noiseMouse.r);
   }
 
   setResize() {

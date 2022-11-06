@@ -31,7 +31,6 @@ class Img {
 
   setOnload(onload) {
     this.image.onload = () => {
-      // const ratio = Math.floor(image.width / image.height * 1000) / 1000;
       const height = Math.floor(this.width * this.ratio);
       this.height = height;
 
@@ -47,7 +46,6 @@ class Img {
     this.srcIdx = (this.srcIdx + 1) >= this.srcSet.length ? 0 : this.srcIdx + 1;
 
     this.nxtImg = new Image();
-    // this.nxtImg.src = this.srcSet[this.srcIdx];
     this.nxtImg.src = this.srcSet[idx];
 
     this.nxtImg.onload = () => {
