@@ -82,7 +82,7 @@ function movieCard(datalist) {
     <div class="movie__card">
       <a href="./movieInfo.html?movieCd=${datalist.movieCd}" class="nav__movieinfo">
       <div class="movie__poster">
-        <img src="${datalist.poster}" class="poster2">
+        <img src="${datalist.poster}" alt="poster_img" class="poster2">
       </div>
       <div class="movie__info">
         <ul class="info__list">

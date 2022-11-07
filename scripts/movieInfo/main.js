@@ -88,10 +88,10 @@ function addImgToSwiper(movieInfo) {
 
   const imgs = movieInfo.images;
 
-  imgs.forEach((img) => {
+  imgs.forEach((img, i) => {
     const swiperSlide = document.createElement("div");
     swiperSlide.classList.add("swiper-slide");
-    swiperSlide.innerHTML = `<img src="${img}" />`;
+    swiperSlide.innerHTML = `<img src="${img}" alt="poster_${i}"/>`;
 
     const swiperSlide2 = swiperSlide.cloneNode(true);
 
