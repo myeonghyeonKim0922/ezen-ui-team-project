@@ -102,7 +102,7 @@ function swiperPoster(datalist) {
   //스와이프로 영화 포스터
   const slides = document.querySelectorAll(".swiper-slide");
   slides.forEach((slide, i) => {
-    slide.innerHTML = `<img src="${datalist[i].poster}" />`;
+    slide.innerHTML = `<img src="${datalist[i].poster}" alt="poster_img"/>`;
     // const img = document.createElement("img");
     // img.setAttribute("src", datalist[i].poster);
     // slide.appendChild(img);
