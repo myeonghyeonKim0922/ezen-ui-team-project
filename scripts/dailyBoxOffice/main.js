@@ -3,7 +3,7 @@
 // url +=
 // url += "?targetDt={dateFormat()}";
 // url = "http://13.125.36.145:8080/boxoffice/daily/dummy";
-url = "http://13.125.36.145:8080/boxoffice/daily?targetDt=" + dateFormat();
+// url = "http://13.125.36.145:8080/boxoffice/daily?targetDt=" + dateFormat();
 
 // 영화 정보를 기반으로 카드 만들기
 function createCard(data) {
@@ -91,6 +91,7 @@ function numberPad(n, width) {
 // date 포맷 함수
 function dateFormat() {
   var dt = new Date();
+  dt.setDate(dt.getDate() - 1);
   const year = dt.getFullYear()
   const month = (dt.getMonth() + 1)
   const date = numberPad(dt.getDate(), 2)
@@ -110,7 +111,7 @@ function toggleLoading(on) {
   loadingEl.style.display = on ? "block": "none";
 }
 
-getDailyBoxOffice("20221101");
+getDailyBoxOffice(dateFormat());
 
 
 

@@ -14,14 +14,32 @@ function information(movieInfo) {
   title.innerText = movieInfo.movieNm;
   titleEn.innerText = movieInfo.movieNmEn;
 
-  infoItemDir.innerText = "감독 :" + " " + movieInfo.directors[0].peopleNm;
-  infoItemGrade.innerText =
-    "상영등급 :" + " " + movieInfo.audits[0].watchGradeNm;
-  infoItemGenre.innerText = "장르 :" + " " + movieInfo.genres[0].genreNm;
+  if (movieInfo.directors.length > 0) {
+    infoItemDir.innerText = "감독 :" + " " + movieInfo.directors[0].peopleNm;
+  } else {
+    infoItemDir.innerText = "감독 :" + " ";
+  }
+
+  if (movieInfo.audits.length > 0) {
+    infoItemGrade.innerText = "상영등급 :" + " " + movieInfo.audits[0].watchGradeNm;
+  } else {
+    infoItemGrade.innerText = "상영등급 :" + " ";
+  }
+
+  if (movieInfo.genres.length > 0) {
+    infoItemGenre.innerText = "장르 :" + " " + movieInfo.genres[0].genreNm;
+  } else {
+    infoItemGenre.innerText = "장르 :" + " ";
+  }
+
+  if (movieInfo.nations.length > 0) {
+    infoItemCountry.innerText = "제작국가 :" + " " + movieInfo.nations[0].nationNm;
+  } else {
+    infoItemCountry.innerText = "제작국가 :" + " ";
+  }
+
   infoItemStartDt.innerText = "제작년도 :" + " " + movieInfo.prdtYear;
   infoItemOpenDt.innerText = "개봉년도 :" + " " + movieInfo.openDt;
-  infoItemCountry.innerText =
-    "제작국가 :" + " " + movieInfo.nations[0].nationNm;
 }
 
 function posterView(movieInfo) {
@@ -86,7 +104,7 @@ function addImgToSwiper(movieInfo) {
   const mySwiper2 = document.querySelector(".mySwiper2 .swiper-wrapper");
   const mySwiper = document.querySelector(".mySwiper .swiper-wrapper");
 
-  const imgs = movieInfo.images;
+  const imgs = movieInfo.images ?? [];
 
   imgs.forEach((img, i) => {
     const swiperSlide = document.createElement("div");
