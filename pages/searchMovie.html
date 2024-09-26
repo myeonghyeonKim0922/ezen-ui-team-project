@@ -4,10 +4,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#6868AC" />
+  <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#6868AC">
+  <meta name="msapplication-TileImage" content="../img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#6868AC">
   <link rel="stylesheet" href="../lib/fontawesome-free-6.2.0-web/css/all.min.css">
   <link rel="stylesheet" href="../stylesheets/searchMovie/main.css">
-  <title>영화 검색</title>
+  <title>EZM - 영화 검색</title>
 </head>
 <body>
   <!-- header -->
@@ -41,9 +57,256 @@
   </header>
   <!-- main -->
   <main class="main">
+
     <div class="main__wrap wrap">
+      <h1>영화검색</h1>
+      <div class="wrap__top">
+
+        <div class="wrap__search_box">
+          <label style="display: none" for="search"></label>
+          <input type="text" placeholder="영화검색" name="search" id="search">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <!-- <div class="history">
+          <a href="#">검색기록1</a>
+          <span>ㅣ</span>  
+          <a href="#">검색기록2</a>
+          <span>ㅣ</span>  
+          <a href="#">검색기록3</a>
+        </div> -->
+
+      </div>
+
+
+      <div class="wrap__line">
+        <hr>
+      </div>
+
+      <div class="wrap__movie_main">
+        <div class="wrap__movie_main__movielist"> <!-- 영화 박스들 -->
+
+          <!-- <div class="movie_list__movieboxes__movie"> 
+            <a href="#">
+            <div class="poster"></div>
+            <div class="starscore">
+              <h1>score</h1>
+            </div>
+            <div class="movie_title">
+              <h1>title</h1>
+              <div class="release">개봉예정</div>
+            </div>
+
+            <div class="movieboxes__info">
+              <div>
+                <span class="release-title">개봉일</span>
+                <span class="info" >2022.02.02</span>
+              </div>
+              <div>
+                <span class="genre-title">장르</span>
+                <span class="info" >액션</span>
+              </div>
+              <div>
+                <span>국가</span>
+                <span class="info" >대한민국</span>
+              </div>
+              <div>
+                <span>감독</span>
+                <span class="info" >홍길동</span>
+              </div>
+            </div>
+
+            <div class="underbar"></div>
+            </a>
+          </div>
+
+          <div class="movie_list__movieboxes__movie">
+            <a href="#">
+            <div class="poster"></div>
+            <div class="starscore">
+              <h1>score</h1>
+            </div>
+            <div class="movie_title">
+              <h1>title</h1>
+              <div class="release">개봉예정</div>
+            </div>
+
+            <div class="movieboxes__info">
+              <div>
+                <span class="release-title">개봉일</span>
+                <span class="info" >2022.02.02</span>
+              </div>
+              <div>
+                <span class="genre-title">장르</span>
+                <span class="info" >액션</span>
+              </div>
+              <div>
+                <span>국가</span>
+                <span class="info" >대한민국</span>
+              </div>
+              <div>
+                <span>감독</span>
+                <span class="info" >홍길동</span>
+              </div>
+            </div>
+
+            <div class="underbar"></div>
+            </a>
+          </div>
+
+          <div class="movie_list__movieboxes__movie">
+            <a href="#">
+            <div class="poster"></div>
+            <div class="starscore">
+              <h1>score</h1>
+            </div>
+            <div class="movie_title">
+              <h1>title</h1>
+              <div class="release">개봉예정</div>
+            </div>
+
+            <div class="movieboxes__info">
+              <div>
+                <span class="release-title">개봉일</span>
+                <span class="info" >2022.02.02</span>
+              </div>
+              <div>
+                <span class="genre-title">장르</span>
+                <span class="info" >액션</span>
+              </div>
+              <div>
+                <span>국가</span>
+                <span class="info" >대한민국</span>
+              </div>
+              <div>
+                <span>감독</span>
+                <span class="info" >홍길동</span>
+              </div>
+            </div>
+
+            <div class="underbar"></div>
+            </a>
+          </div>
+
+          <div class="movie_list__movieboxes__movie">
+            <a href="#">
+            <div class="poster"></div>
+            <div class="starscore">
+              <h1>score</h1>
+            </div>
+            <div class="movie_title">
+              <h1>title</h1>
+              <div class="release">개봉예정</div>
+            </div>
+
+            <div class="movieboxes__info">
+              <div>
+                <span class="release-title">개봉일</span>
+                <span class="info" >2022.02.02</span>
+              </div>
+              <div>
+                <span class="genre-title">장르</span>
+                <span class="info" >액션</span>
+              </div>
+              <div>
+                <span>국가</span>
+                <span class="info" >대한민국</span>
+              </div>
+              <div>
+                <span>감독</span>
+                <span class="info" >홍길동</span>
+              </div>
+            </div>
+
+            <div class="underbar"></div>
+            </a>
+          </div>
+
+          <div class="movie_list__movieboxes__movie">
+            <a href="">
+            <div class="poster"></div>
+            <div class="starscore">
+              <h1>score</h1>
+            </div>
+            <div class="movie_title">
+              <h1>title</h1>
+              <div class="release">개봉예정</div>
+            </div>
+
+            <div class="movieboxes__info">
+              <div>
+                <span class="release-title">개봉일</span>
+                <span class="info" >2022.02.02</span>
+              </div>
+              <div>
+                <span class="genre-title">장르</span>
+                <span class="info" >액션</span>
+              </div>
+              <div>
+                <span>국가</span>
+                <span class="info" >대한민국</span>
+              </div>
+              <div>
+                <span>감독</span>
+                <span class="info" >홍길동</span>
+              </div>
+            </div>
+
+            <div class="underbar"></div>
+            </a>
+          </div>
+
+          <div class="movie_list__movieboxes__movie">
+            <a href="">
+            <div class="poster"></div>
+            <div class="starscore">
+              <h1>score</h1>
+            </div>
+            <div class="movie_title">
+              <h1>title</h1>
+              <div class="release">개봉예정</div>
+            </div>
+
+            <div class="movieboxes__info">
+              <div>
+                <span class="release-title">개봉일</span>
+                <span class="info" >2022.02.02</span>
+              </div>
+              <div>
+                <span class="genre-title">장르</span>
+                <span class="info" >액션</span>
+              </div>
+              <div>
+                <span>국가</span>
+                <span class="info" >대한민국</span>
+              </div>
+              <div>
+                <span>감독</span>
+                <span class="info" >홍길동</span>
+              </div>
+            </div>
+
+            <div class="underbar"></div>
+            </a>
+          </div> -->
+
+          <!-- 영화 박스들 끝 -->
+
+        </div>
+      </div>
+
 
     </div>
+
+    <!-- <div class="page_bt">
+        <a href="#" class="prev_bt">&lt 이전</a>
+        <a href="#" class="num on">1</a>
+        <a href="#" class="num">2</a>
+        <a href="#" class="num">3</a>
+        <a href="#" class="num">4</a>
+        <a href="#" class="num">5</a>
+        <a href="#" class="next_bt">다음 &gt</a>
+    </div> -->
+
   </main>
   <!-- footer -->
   <footer class="footer">
@@ -56,7 +319,7 @@
       <div class="footer__api">
         <span class="api__name">Custom API</span>
         <span class="api__desc">영화 포스터 및 스틸 이미지, 줄거리</span>
-        <span class="api__link"><a href="http://13.125.36.145:8080/search/movie/info">http://13.125.36.145:8080/search/movie/info</a></span>
+        <span class="api__link"><a href="http://13.125.36.145:8080">http://13.125.36.145:8080</a></span>
       </div>
     </div>
     <div class="footer__divider"></div>
@@ -76,6 +339,6 @@
     </div>
   </footer>
   <script src="../scripts/share/global.js"></script>
-  <script src="../scripts/searchMovie/main.js"></script>
+  <script type="module" src="../scripts/searchMovie/main.js"></script>
 </body>
 </html>

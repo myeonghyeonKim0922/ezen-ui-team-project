@@ -1,81 +1,256 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#6868AC" />
-  <link rel="stylesheet" href="../lib/fontawesome-free-6.2.0-web/css/all.min.css">
-  <link rel="stylesheet" href="../stylesheets/movieInfo/main.css">
-  <title></title>
-</head>
-<body>
-  <!-- header -->
-  <header class="header">
-    <div class="header__main">
-      <div class="header__logo logo">
-        <h1 class="logo__text">
-          <a class="logo__link" href="../index.html">Title</a>
-        </h1>
+  <head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#6868AC">
+    <meta name="msapplication-TileImage" content="../img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#6868AC" >
+    <link rel="stylesheet" href="../lib/swiper-8.4.4/swiper.min.css" >
+    <link
+      rel="stylesheet"
+      href="../lib/fontawesome-free-6.2.0-web/css/all.min.css"
+    >
+    <link rel="stylesheet" href="../stylesheets/movieInfo/main.css" >
+    <title>EZM - 영화 상세</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <div class="header__main">
+        <div class="header__logo logo">
+          <h1 class="logo__text">
+            <a class="logo__link" href="../index.html">Title</a>
+          </h1>
+        </div>
+        <div class="header__gnb gnb">
+          <ul class="gnb__list">
+            <li class="gnb__item gnb__item--1">
+              <a href="./dailyBoxOffice.html">일간 박스오피스</a>
+            </li>
+            <li class="gnb__item gnb__item--2">
+              <a href="./weeklyBoxOffice.html">주간 박스오피스</a>
+            </li>
+            <li class="gnb__item gnb__item--3">
+              <a href="./searchMovie.html">검색</a>
+            </li>
+          </ul>
+        </div>
+        <div class="menu__button">
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </div>
-      <div class="header__gnb gnb">
-        <ul class="gnb__list">
-          <li class="gnb__item gnb__item--1"><a href="./dailyBoxOffice.html">일간 박스오피스</a></li>
-          <li class="gnb__item gnb__item--2"><a href="./weeklyBoxOffice.html">주간 박스오피스</a></li>
-          <li class="gnb__item gnb__item--3"><a href="./searchMovie.html">검색</a></li>
-        </ul>
+      <div class="header__sub">
+        <div class="menu">
+          <ul class="menu__list">
+            <li class="menu__item menu__item--1">
+              <a href="./dailyBoxOffice.html">일간 박스오피스</a>
+            </li>
+            <li class="menu__item menu__item--2">
+              <a href="./weeklyBoxOffice.html">주간 박스오피스</a>
+            </li>
+            <li class="menu__item menu__item--3">
+              <a href="./searchMovie.html">검색</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="menu__button">
-        <i class="fa-solid fa-bars"></i>
+    </header>
+    <!-- main -->
+    <main class="main">
+      <div class="main__wrap wrap">
+        <div class="movie__brief">
+          <div class="movie__poster">
+            <img src="https://ssl.pstatic.net/static/movie/2012/06/dft_img203x290.png" alt="poster-img" >
+          </div>
+          <div class="movie__info info">
+            <div class="title__wrap">
+              <div class="info__title">제목</div>
+              <div class="info__title_ensub">영어제목</div>
+            </div>
+            <div class="info__grid">
+              <div class="info__item info__item--dir">
+                감독명<span>감독</span>
+              </div>
+              <div class="info__item info__item--grade">
+                관람등급<span>등급</span>
+              </div>
+              <div class="info__item info__item--genre">
+                장르<span>장르</span>
+              </div>
+              <div class="info__item info__item--start-dt">
+                제작년도<span>연도</span>
+              </div>
+              <div class="info__item info__item--open-dt">
+                개봉일<span>날짜</span>
+              </div>
+              <div class="info__item info__item--country">
+                제작국가<span>국가</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="movie__content content">
+          <div class="content__tab">
+            <div class="content__tab--sum">
+              <a>줄거리</a>
+            </div>
+            <div class="content__tab--staff">
+              <a>참여 스태프</a>
+            </div>
+          </div>
+          <div class="content__main">
+            <div class="content__main--wrap">
+              <div class="content__main--short">짧은 줄거리</div>
+              <div class="content__main--long">긴 줄거리</div>
+            </div>
+            <div class="staffs">
+              <!-- <div class="staffs__item"></div> -->
+            </div>
+          </div>
+        </div>
+        <div class="movie__still-cut">
+          <div class="still-cut__header">Still</div>
+          <div class="still-cut__swiper">
+            <div
+              style="
+                --swiper-navigation-color: #fff;
+                --swiper-pagination-color: #fff;
+              "
+              class="swiper mySwiper2"
+            >
+              <div class="swiper-wrapper">
+                <!-- <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                </div> -->
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <!-- <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="header__sub">
-      <div class="menu">
-        <ul class="menu__list">
-          <li class="menu__item menu__item--1"><a href="./dailyBoxOffice.html">일간 박스오피스</a></li>
-          <li class="menu__item menu__item--2"><a href="./weeklyBoxOffice.html">주간 박스오피스</a></li>
-          <li class="menu__item menu__item--3"><a href="./searchMovie.html">검색</a></li>
-        </ul>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer__info">
+        <div class="footer__api">
+          <span class="api__name">영화진흥위원회 API</span>
+          <span class="api__desc"
+            >박스오피스 조회, 영화 검색, 영화 상세정보</span
+          >
+          <span class="api__link"
+            ><a
+              href="https://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do"
+              >https://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do</a
+            ></span
+          >
+        </div>
+        <div class="footer__api">
+          <span class="api__name">Custom API</span>
+          <span class="api__desc">영화 포스터 및 스틸 이미지, 줄거리</span>
+          <span class="api__link"
+            ><a href="http://13.125.36.145:8080"
+              >http://13.125.36.145:8080</a
+            ></span
+          >
+        </div>
       </div>
-    </div>
-  </header>
-  <!-- main -->
-  <main class="main">
-    <div class="main__wrap wrap">
+      <div class="footer__divider"></div>
+      <div class="footer__info">
+        <div class="footer__logo">
+          <h3>Title</h3>
+        </div>
+        <div class="footer__members">
+          <ul class="members__list">
+            <li class="members__item members__item--1">강하라</li>
+            <li class="members__item members__item--2">강희재</li>
+            <li class="members__item members__item--3">김명현</li>
+            <li class="members__item members__item--4">박민우</li>
+            <li class="members__item members__item--5">양준수</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="../lib/swiper-8.4.4/swiper-bundle.min.js"></script>
 
-    </div>
-  </main>
-  <!-- footer -->
-  <footer class="footer">
-    <div class="footer__info">
-      <div class="footer__api">
-        <span class="api__name">영화진흥위원회 API</span>
-        <span class="api__desc">박스오피스 조회, 영화 검색, 영화 상세정보</span>
-        <span class="api__link"><a href="https://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do">https://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do</a></span>
-      </div>
-      <div class="footer__api">
-        <span class="api__name">Custom API</span>
-        <span class="api__desc">영화 포스터 및 스틸 이미지, 줄거리</span>
-        <span class="api__link"><a href="http://13.125.36.145:8080/search/movie/info">http://13.125.36.145:8080/search/movie/info</a></span>
-      </div>
-    </div>
-    <div class="footer__divider"></div>
-    <div class="footer__info">
-      <div class="footer__logo">
-        <h3>Title</h3>
-      </div>
-      <div class="footer__members">
-        <ul class="members__list">
-          <li class="members__item members__item--1">강하라</li>
-          <li class="members__item members__item--2">강희재</li>
-          <li class="members__item members__item--3">김명현</li>
-          <li class="members__item members__item--4">박민우</li>
-          <li class="members__item members__item--5">양준수</li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-  <script src="../scripts/share/global.js"></script>
-  <script src="../scripts/movieInfo/main.js"></script>
-</body>
+    <script src="../scripts/share/global.js"></script>
+    <script type="module" src="../scripts/movieInfo/main.js"></script>
+  </body>
 </html>
